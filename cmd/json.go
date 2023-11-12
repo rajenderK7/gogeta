@@ -61,9 +61,9 @@ func writeToFile(data *string) error {
 func init() {
 	rootCmd.AddCommand(jsonCmd)
 
-	jsonCmd.PersistentFlags().StringVarP(&inputFile, "input", "i", "", "Input JSON filename.")
-	jsonCmd.PersistentFlags().StringVarP(&outputFile, "output", "o", "", "File to write the genearted types to.")
-	jsonCmd.Flags().BoolVarP(&outputToFile, "ouput-to-file", "f", false, "Output the generated type to a file.")
+	jsonCmd.PersistentFlags().StringVarP(&inputFile, "input", "i", "", "Input JSON filename")
+	jsonCmd.PersistentFlags().StringVarP(&outputFile, "output", "o", "", "File to write the genearted types to")
+	jsonCmd.Flags().BoolVarP(&outputToFile, "ouput-to-file", "f", false, "Output the generated type to a file")
 
 	// The input flag is required because the actual
 	// JSON is sourced from a JSON file.

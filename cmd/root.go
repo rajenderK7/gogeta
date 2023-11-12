@@ -10,7 +10,8 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "gogeta",
 	Short: "Gogeta generates valid Go types (structs) from JSON.",
-	Long: `Gogeta takes any valid JSON file as input and generates valid Go types (structs).
+	Long: `Gogeta is a CLI to generate valid Go types (structs) from JSON.
+This tool takes any valid JSON file as input and generates valid Go types (structs).
 The genereated types are written to the STDOUT or any file specified.`,
 }
 
