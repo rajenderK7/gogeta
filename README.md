@@ -1,41 +1,50 @@
 ## Gogeta
+
 Gogeta is a tool that generates valid Go types (structs) from JSON files.
 
 Gogeta - I was just thinking of **Go** **Ge**nerate **Ty**pes -> GoGeTy -> Gogeta. That's how I named it.
 
 ### Features
-- Generates Go structs from JSON
+
+- Generates Go structs from JSON (JSON files)
 - Supports nested JSON objects
 - Supports arrays of JSON objects
-- Generating Go types from JSON files or stdin (WIP)
+- Accept input from stdin (WIP)
 
 ### Usage
 
 To use Gogeta, simply run the following command:
 
 Use code with caution. Learn more
+
 ```
 gogeta json [flags]
 ```
 
 ### Flags
-* -i, --input: The input JSON filename or stdin. If not provided, Gogeta will read the JSON from stdin.
-* -o, --output: The file to write the generated types to. If not provided, Gogeta will print the generated types to stdout.
-* -f, --output-to-file: Output the generated type to a file.
+
+- -i, --input: The input JSON filename or stdin. If not provided, Gogeta will read the JSON from stdin.
+- -o, --output: The file to write the generated types to. If not provided, Gogeta will print the generated types to stdout.
+- -f, --output-to-file: Output the generated type to a file.
 
 ### Examples
-Generate a Go struct from a JSON file and write to _output.go_ or anywhere you want:
+
+Generate a Go struct from a JSON file and write to _temp/output.go_ or anywhere you want:
+
 ```
-gogeta json -i input.json -o output.go
+gogeta json -i input.json -o temp/output.go
 ```
 
-Generate Go struct and write to a file: 
+Generate Go struct and write to a file (default file):
+
 ```
 gogeta json -i input.json -f
 ```
 
 Generate a Go struct from JSON to stdout:
+
 Simply omit the _-o_ flag
+
 ```
 gogeta json -i input.json
 ```
@@ -43,16 +52,17 @@ gogeta json -i input.json
 ### Installation
 
 Clone the Repository
+
 ```
 git clone https://github.com/rajenderK7/gogeta.git
 cd gogeta
 ```
 
 Build the CLI Application
+
 ```
 go build -o bin/gogeta
 ```
-
 
 Add to System Environment Variables
 
@@ -61,6 +71,7 @@ Linux / macOS:
 ```
 export PATH=$PATH:/path/to/gogeta/bin
 ```
+
 To make it permanent, add the above line to your shell profile file (e.g., ~/.bashrc, ~/.zshrc).
 
 Windows:
@@ -73,6 +84,7 @@ Windows:
    - Click "New" and add the path to the folder where gogeta.exe is located.
 
 Verify Installation
+
 ```
 gogeta --help
 ```

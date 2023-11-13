@@ -32,30 +32,31 @@ var jsonCmd = &cobra.Command{
 			fmt.Println(geneartedType)
 			return
 		}
-		err = writeToFile(&geneartedType)
+		outputLoc, err := writeToFile(&geneartedType)
 		if err != nil {
 			fmt.Println(err.Error())
 		}
+		fmt.Printf("✅ Type generated and written to \"%s\"", outputLoc)
 	},
 }
 
 // writeToFile function creates a file if the file is not already present
 // otherwise, it will truncate all the data and rewrites the file.
-func writeToFile(data *string) error {
+func writeToFile(data *string) (string, error) {
 	fp := outputFile
 	if outputFile == "" {
 		fp = defaultOutputFile
 	}
 	file, err := os.Create(fp)
 	if err != nil {
-		return err
+		return "", err
 	}
 	defer file.Close()
 	_, err = io.WriteString(file, *data)
 	if err != nil {
-		return err
+		return "", err
 	}
-	return nil
+	return fp, nil
 }
 
 func init() {
