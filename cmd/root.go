@@ -6,6 +6,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	version string = "1.0.0"
+)
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "gogeta",
@@ -13,6 +17,7 @@ var rootCmd = &cobra.Command{
 	Long: `Gogeta is a CLI to generate valid Go types (structs) from JSON.
 This tool takes any valid JSON file as input and generates valid Go types (structs).
 The genereated types are written to the STDOUT or any file specified.`,
+	Version: version,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

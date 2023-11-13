@@ -86,7 +86,7 @@ Windows:
 Verify Installation
 
 ```
-gogeta --help
+gogeta --version
 ```
 
 ### Contributing
